@@ -8,6 +8,13 @@
 
 <body>
   <h1>Manipulate the DOM</h1>
+  <form>
+    Ny vare:<br>
+    <input type="text" name="vare" id="input" value="kage">
+    <br>
+    <input type="submit" name="knap" value="Tilføj vare" id="knap">
+  </form>
+
   <h2>Indkøbsliste</h2>
   <div>
     <ul id="liste">
@@ -25,5 +32,22 @@
   </div>
   
   <script src="bundle.js"></script>
+  <script>
+  
+  var button = document.getElementById('knap')
+  button.addEventListener('click', addFunction)
+
+  function addFunction(){
+    let i = document.createElement('li')
+    var x = document.getElementById('input').value
+    let it = document.createTextNode(x)
+    i.appendChild(it)
+    let l = document.getElementById('listeUsund')
+    l.appendChild(i)
+
+  }
+
+
+  </script>
 </body>
 </html>
